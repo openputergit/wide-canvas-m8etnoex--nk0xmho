@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernLoan - Automated Home Loan Software</title>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .skeumorphic {
+            background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+            border: 1px solid #d1d1d1;
+            box-shadow: 
+                0 1px 2px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+            border-radius: 8px;
+        }
+        .skeumorphic-button {
+            background: linear-gradient(to bottom, #4a90e2 0%, #357abd 100%);
+            border: 1px solid #2a5f9e;
+            box-shadow: 
+                0 1px 2px rgba(0,0,0,0.2),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            color: white;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+            transition: all 0.2s ease;
+        }
+        .skeumorphic-button:active {
+            background: linear-gradient(to bottom, #357abd 0%, #4a90e2 100%);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <nav class="skeumorphic bg-white p-4 fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">ModernLoan</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-blue-600">Home</a>
+                <a href="#" class="hover:text-blue-600">Features</a>
+                <a href="#" class="hover:text-blue-600">About</a>
+                <a href="#" class="hover:text-blue-600">Contact</a>
+            </div>
+            <button class="skeumorphic-button px-6 py-2 rounded-lg">Get Started</button>
+        </div>
+    </nav>
+
+    <main class="mt-20 px-4">
+        <section class="container mx-auto py-16">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Automate Your Home Loan Journey</h1>
+                    <p class="text-gray-600 mb-8">Transform your lending process with our modern SaaS solution. Streamline applications, automate approvals, and deliver better customer experiences.</p>
+                    <div class="flex gap-4">
+                        <button class="skeumorphic-button px-8 py-3 rounded-lg">Start Free Trial</button>
+                        <button class="skeumorphic px-8 py-3 rounded-lg text-blue-600">Watch Demo</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/widecanvas-d0dd4.appspot.com/o/additional-images%2Fui-antim.webp?alt=media&token=45b89d46-1246-4ffb-96b4-7b7edb37058b" 
+                         alt="Loan Management Dashboard" 
+                         class="skeumorphic w-full rounded-lg shadow-xl">
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto py-16">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="skeumorphic p-6">
+                    <i class="bi bi-lightning-charge text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold my-4">Fast Processing</h3>
+                    <p class="text-gray-600">Automated underwriting and instant decisions for faster loan approvals.</p>
+                </div>
+                <div class="skeumorphic p-6">
+                    <i class="bi bi-shield-check text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold my-4">Secure Platform</h3>
+                    <p class="text-gray-600">Bank-grade security with encrypted data transmission and storage.</p>
+                </div>
+                <div class="skeumorphic p-6">
+                    <i class="bi bi-graph-up text-4xl text-blue-600"></i>
+                    <h3 class="text-xl font-semibold my-4">Analytics Dashboard</h3>
+                    <p class="text-gray-600">Comprehensive reporting and insights for better decision making.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto py-16">
+            <div class="skeumorphic p-8 text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Lending Process?</h2>
+                <p class="text-gray-600 mb-8">Join thousands of satisfied lenders using our platform</p>
+                <button class="skeumorphic-button px-8 py-3 rounded-lg">Schedule a Demo</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">ModernLoan</h3>
+                    <p class="text-gray-400">Automating the future of lending</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Features</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms</a></li>
+                        <li><a href="#" class="hover:text-white">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ModernLoan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading state management
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+        
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+
+        // Handle button clicks
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                showLoading();
+                // Simulate API call
+                setTimeout(() => {
+                    hideLoading();
+                }, 1000);
+            });
+        });
+
+        // Mobile menu functionality can be added here if needed
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
